@@ -1,0 +1,61 @@
+#header {
+     background-color: #736B5C;
+     height: 100px;
+     display: table;
+}
+
+#posts{
+    margin-top: 1%;
+    background-color: #BABEBF; 
+    height: 850px;
+}
+
+#posterPost{
+    margin-top: 1%;
+    background-color: #BABEBF; 
+    height: 850px;
+}
+
+
+#image-profil, #nom-profil{
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+
+#nom-Profil{
+    font-weight:bold;
+}
+
+#titre-forum{
+    vertical-align:middle;
+    display: table-cell;
+}
+
+input,
+textarea {
+    padding: 10px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 4px;
+}
+
+#formconnexion{
+    margin-top: 10px;
+}
+
+#sexe-select{
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 4px;
+}
+
