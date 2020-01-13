@@ -12,12 +12,14 @@
 
 #posterPost{
     margin-top: 1%;
-    background-color: #BABEBF; 
-    height: 850px;
 }
 
 
-#image-profil, #nom-profil{
+#profil{
+    height: 350px;
+}
+
+#nom-profil{
     display: block;
     margin: auto;
     margin-top: 10px;
@@ -49,8 +51,20 @@ textarea {
     margin-top: 10px;
 }
 
+
 #sexe-select{
     margin-bottom: 20px;
+    padding: 10px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 4px;
+}
+
+#category-select {
+
     padding: 10px;
     border: 0;
     width: 100%;
