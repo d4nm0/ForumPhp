@@ -1,5 +1,5 @@
 #header {
-     background-color: #736B5C;
+     background-color: #E7E7E7;
      height: 100px;
      display: table;
 }
@@ -31,6 +31,7 @@
 #titre-forum{
     vertical-align:middle;
     display: table-cell;
+    width: 55px;;
 }
 
 input,

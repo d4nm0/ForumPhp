@@ -152,9 +152,8 @@ function AfficherPost(id)
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div id="header" class="col-lg-12">
-                <h1 id="titre-forum">Forum PHP Joffrey/Nicolas/Dan</h1>
-
+            <div id="header" class="col-lg-12 text-center">
+                <img class="img-fluid" src="header.jpg" style="height:100px; ">
             </div>
             <div class="col-lg-1"></div>
             <div id="posts" class="col-lg-7">
