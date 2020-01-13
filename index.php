@@ -157,45 +157,46 @@ function AfficherPost(id)
             </div>
             <div class="col-lg-1"></div>
             <div id="posts" class="col-lg-7">
+
             </div>
             <div id="posterPost" class="col-lg-7" style="display:none;">
-            <div class="row" >
-                <div class="container">
-            <form method="POST" class="col-lg-12" style="background-color: #E7E7E7; margin-top:20px; box-shadow: 5px 5px 5px 5px grey;" >
-                <table class="table">
-                    <tr>
-                        <th colspan="2" style="text-align: center;">Nouveau Post</th>
-                    </tr>
-                    <tr>
-                        <td>Sujet</td>
-                        <td><input type="text" name="sujet" size="70" maxlength="70" /></td>
-                    </tr>
-                    <tr >
-                        <td>Message</td>
-                        <td><textarea name="contenu"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td>Categories</td>
-                        <td>
-                        <select name="category" id="category-select">
-                            <option value="" disabled selected>-- category --</option>
-                            <option value="tech">tech</option>
-                            <option value="vie">vie</option>
-                            <option value="politique">politique</option>
-                        </select>
-                        </td>
-                    </tr>
-                    <tr >
-                        <td colspan="2"><input type="submit" name="submit" value="Poster le Topic" /></td>
-                    </tr>
-                    <?php if(isset($error)) { ?>
-                    <tr>
-                        <td colspan="2"><?= $error ?></td>
-                    </tr>
-                    <?php } ?>
-                </table>
-                </form>
-                </div>
+                <div class="row" >
+                    <div class="container">
+                        <form method="POST" class="col-lg-12" style="background-color: #E7E7E7; margin-top:20px; box-shadow: 5px 5px 5px 5px grey;" >
+                            <table class="table">
+                                <tr>
+                                    <th colspan="2" style="text-align: center;">Nouveau Post</th>
+                                </tr>
+                                <tr>
+                                    <td>Sujet</td>
+                                    <td><input type="text" name="sujet" size="70" maxlength="70" /></td>
+                                </tr>
+                                <tr >
+                                    <td>Message</td>
+                                    <td><textarea name="contenu"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>Categories</td>
+                                    <td>
+                                    <select name="category" id="category-select">
+                                        <option value="" disabled selected>-- category --</option>
+                                        <option value="tech">tech</option>
+                                        <option value="vie">vie</option>
+                                        <option value="politique">politique</option>
+                                    </select>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="2"><input type="submit" name="submit" value="Poster le Topic" /></td>
+                                </tr>
+                                <?php if(isset($error)) { ?>
+                                <tr>
+                                    <td colspan="2"><?= $error ?></td>
+                                </tr>
+                                <?php } ?>
+                            </table>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-1"></div>
@@ -212,59 +213,59 @@ function AfficherPost(id)
             </div>
             <?php } else { ?>
             <div class="col-lg-2" id="divconnexion" style="margin-top: 1%;">
-            <div  style="height:250px;  background-color: #D3D3D3; margin-left:-14px; margin-right:-14px; text-align: center;" id="connexion">
-                <form id="formconnexion" method="POST">
-                <h2 style="background-color:grey; margin-bottom:20px; text-align:center; margin-top:-10px;">Connexion</h2>
-                    <input type="text" name="identifiant" placeholder="Identifiant" style="width: 90%;"><br><br>
-                    <input type="password" name="motDePasse" placeholder="Mot de passe" style="width: 90%;"><br><br>
-                    <input type="submit" name="valider" value="Se Connecter" style="width: 90%;"><br><br>
-                    <?php if (isset($erreur)) {
-                        echo "<font color='red'>".$erreur."</font><br/><br/>";
-                    } ?>
-                </form>
-            </div>
-            <div id="inscription" style="margin-top:5%; background-color: #D3D3D3; height:620px; margin-left:-14px; margin-right:-14px; text-align: center;"> 
-                <h2 style="background-color:grey; margin-bottom:20px; text-align:center;">Inscription</h2>
-                <form method="post">
-                    <?php
-                            // S'il y a une erreur sur le nom alors on affiche
-                        if (isset($er_pseudo)){
-                        ?>
-                            <div><?= $er_pseudo ?></div>
-                    <?php   
-                            }
-                        ?>
-                        <input  style="margin-bottom: 20px; width:90%;" type="text" placeholder="nom" name="nom" value="<?php if(isset($nom)){ echo $nom; }?>" style="width: 90%;" require>
-                        <input  style="margin-bottom: 20px; width:90%;" type="text" placeholder="prenom" name="prenom"  value="<?php if(isset($prenom)){ echo $prenom; }?>" require>
-                        <input type="text" placeholder="Votre pseudo" name="pseudo" value="<?php if(isset($pseudo)){ echo $pseudo; }?>" style="width: 90%;" required><br><br>
-                        <input type="date" placeholder="Date de naissance" name="naissance" value="<?php if(isset($naissance)){ echo $naissance; }?>" style="width: 90%;" required><br><br>
-                        <select name="sexe" id="sexe-select" style="width: 90%;">
-                            <option value="" disabled selected>-- Sexe --</option>
-                            <option value="homme">Homme</option>
-                            <option value="femme">Femme</option>
-                            <option value="nonbinaire">Non Binaire</option>
-                        </select>
-                        <?php
-                            if (isset($er_mail)){
-                            ?>
-                                <div><?= $er_mail ?></div>
-                            <?php   
-                            }
-                        ?>
-                        <input type="email" placeholder="Adresse mail" name="mail" value="<?php if(isset($mail)){ echo $mail; }?>" style="width: 90%;" required><br><br>
-                        <?php
-                            if (isset($er_mdp)){
-                            ?>
-                                <div><?= $er_mdp ?></div>
-                            <?php   
-                            }
-                        ?>
-                        <input type="password" placeholder="Mot de passe" name="mdp" value="<?php if(isset($mdp)){ echo $mdp; }?>" style="width: 90%;" required><br><br>
-                        <input type="password" placeholder="Confirmer le mot de passe" name="confmdp" style="width: 90%;" required><br><br>
-                        <button class="btn btn-dark" type="submit" name="inscription" style="width: 90%;">S'inscrire</button>
+                <div  style="height:250px;  background-color: #D3D3D3; margin-left:-14px; margin-right:-14px; text-align: center;" id="connexion">
+                    <form id="formconnexion" method="POST">
+                    <h2 style="background-color:grey; margin-bottom:20px; text-align:center; margin-top:-10px;">Connexion</h2>
+                        <input type="text" name="identifiant" placeholder="Identifiant" style="width: 90%;"><br><br>
+                        <input type="password" name="motDePasse" placeholder="Mot de passe" style="width: 90%;"><br><br>
+                        <input type="submit" name="valider" value="Se Connecter" style="width: 90%;"><br><br>
+                        <?php if (isset($erreur)) {
+                            echo "<font color='red'>".$erreur."</font><br/><br/>";
+                        } ?>
                     </form>
                 </div>
-                        </div>
+                <div id="inscription" style="margin-top:5%; background-color: #D3D3D3; height:620px; margin-left:-14px; margin-right:-14px; text-align: center;"> 
+                    <h2 style="background-color:grey; margin-bottom:20px; text-align:center;">Inscription</h2>
+                    <form method="post">
+                        <?php
+                                // S'il y a une erreur sur le nom alors on affiche
+                            if (isset($er_pseudo)){
+                            ?>
+                                <div><?= $er_pseudo ?></div>
+                        <?php   
+                                }
+                            ?>
+                            <input  style="margin-bottom: 20px; width:90%;" type="text" placeholder="nom" name="nom" value="<?php if(isset($nom)){ echo $nom; }?>" style="width: 90%;" require>
+                            <input  style="margin-bottom: 20px; width:90%;" type="text" placeholder="prenom" name="prenom"  value="<?php if(isset($prenom)){ echo $prenom; }?>" require>
+                            <input type="text" placeholder="Votre pseudo" name="pseudo" value="<?php if(isset($pseudo)){ echo $pseudo; }?>" style="width: 90%;" required><br><br>
+                            <input type="date" placeholder="Date de naissance" name="naissance" value="<?php if(isset($naissance)){ echo $naissance; }?>" style="width: 90%;" required><br><br>
+                                <select name="sexe" id="sexe-select" style="width: 90%;">
+                                    <option value="" disabled selected>-- Sexe --</option>
+                                    <option value="homme">Homme</option>
+                                    <option value="femme">Femme</option>
+                                    <option value="nonbinaire">Non Binaire</option>
+                                </select>
+                            <?php
+                                if (isset($er_mail)){
+                                ?>
+                                    <div><?= $er_mail ?></div>
+                                <?php   
+                                }
+                            ?>
+                            <input type="email" placeholder="Adresse mail" name="mail" value="<?php if(isset($mail)){ echo $mail; }?>" style="width: 90%;" required><br><br>
+                            <?php
+                                if (isset($er_mdp)){
+                                ?>
+                                    <div><?= $er_mdp ?></div>
+                                <?php   
+                                }
+                            ?>
+                            <input type="password" placeholder="Mot de passe" name="mdp" value="<?php if(isset($mdp)){ echo $mdp; }?>" style="width: 90%;" required><br><br>
+                            <input type="password" placeholder="Confirmer le mot de passe" name="confmdp" style="width: 90%;" required><br><br>
+                            <button class="btn btn-dark" type="submit" name="inscription" style="width: 90%;">S'inscrire</button>
+                    </form>
+                </div>
+            </div>
                 <?php } ?>
         </div>
     </div>
